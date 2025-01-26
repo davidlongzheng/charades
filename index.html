@@ -83,6 +83,11 @@
             color: white;
         }
 
+        #endGameButton {
+            background-color: #95a5a6;  /* Gray color */
+            color: white;
+        }
+
         #modeButton {
             background-color: #9b59b6;
             color: white;
@@ -123,6 +128,7 @@
     <button id="startButton" onclick="startGame()">Start Game</button>
     <button id="newWordButton" onclick="getNewWord(true)" style="display: none;">Got It!</button>
     <button id="skipButton" onclick="getNewWord(false)" style="display: none;">Skip</button>
+    <button id="endGameButton" onclick="endGame()" class="game-button">End Game</button>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="game.js"></script>

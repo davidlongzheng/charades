@@ -75,6 +75,7 @@ function startGame() {
     document.getElementById('startButton').style.display = 'none';
     document.getElementById('newWordButton').style.display = 'inline-block';
     document.getElementById('skipButton').style.display = 'inline-block';
+    document.getElementById('endGameButton').style.display = 'inline-block'; // Show end game button
     getNewWord(false);
     startTimer();
 }
@@ -105,13 +106,17 @@ function endGame() {
     document.getElementById('modeButton').style.display = 'inline-block';
     document.getElementById('newWordButton').style.display = 'none';
     document.getElementById('skipButton').style.display = 'none';
+    document.getElementById('endGameButton').style.display = 'none'; // Hide end game button
     document.getElementById('wordDisplay').textContent = `Game Over! Final Score: ${score}`;
     document.getElementById('modeDisplay').textContent = ''; // Clear mode display
     document.getElementById('timer').style.display = 'none'; // Hide timer when game ends
     clearInterval(timerInterval);
 }
 
-// When page loads, hide start button until mode is selected
-document.addEventListener('DOMContentLoaded', function() {
+// When page loads, hide start button and end game button until mode is selected
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOMContentLoaded event fired");
     document.getElementById('startButton').style.display = 'none';
-}); 
+    document.getElementById('endGameButton').style.display = 'none';
+    document.getElementById('timer').style.display = 'none'; // Also hide timer initially
+});
